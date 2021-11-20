@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import RegistrationSerializer
 from rest_framework.authtoken.models import Token
-
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 
 @api_view(['POST'])

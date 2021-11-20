@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'flightapi',
     'rest_framework.authtoken',
     "user_api",
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -144,5 +146,19 @@ REST_FRAMEWORK = {
         
     ]
 }
+
+# # Whitelist localhost:3000 because that's where frontend will be served
+
+# Option 1
+CORS_ORIGIN_WHITELIST = [
+    'https://localhost:3000',
+]
+
+# Option 2
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+
+
 
 django_heroku.settings(locals())

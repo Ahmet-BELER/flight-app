@@ -9,7 +9,7 @@ from .models import (
     Reservation,
 )
 
-class CountrySerializer(serializers.ModelSerializer): 
+class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
         fields = '__all__'
@@ -34,35 +34,27 @@ class CompanySerializer(serializers.ModelSerializer):
         model = Company
         fields = '__all__'
 
-# class FlightSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Flight
-#         fields = '__all__'
-        
-        
 class FlightSerializer(serializers.ModelSerializer):
-    departure_city = serializers.CharField()
-    departure_airport = serializers.CharField()
-    arrive_city = serializers.CharField()
-    arrive_airport = serializers.CharField()
-    company = serializers.CharField()
-    author = serializers.StringRelatedField(default=serializers.CurrentUserDefault(), read_only=True)
+    # departure_city = serializers.CharField()
+    # departure_airport = serializers.CharField()
+    # arrive_city = serializers.CharField()
+    # arrive_airport = serializers.CharField()
+    # company = serializers.CharField()
+    # author = serializers.StringRelatedField(default=serializers.CurrentUserDefault(), read_only=True)
 
     class Meta:
         model = Flight
         fields = '__all__'
         # exclude  = ['author']
-        # depth=1  
-  
+        depth=1
         
- 
- 
- 
-   
-   
-        
-
 class ReservationSerializer(serializers.ModelSerializer):
+    user = serializers.CharField()
+    user_type = serializers.CharField()
+    flight = serializers.CharField()
+    
     class Meta:
         model = Reservation
         fields = '__all__'
+        # exclude  = ['user']
+        # depth=1

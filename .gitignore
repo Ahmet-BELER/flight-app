@@ -1,5 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/django
-# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+# Created by https://www.toptal.com/developers/gitignore/api/django,react
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,react
 
 ### Django ###
 *.log
@@ -149,4 +150,19 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# End of https://www.toptal.com/developers/gitignore/api/django
+### react ###
+.DS_*
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# End of https://www.toptal.com/developers/gitignore/api/django,react
